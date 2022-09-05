@@ -1,0 +1,21 @@
+ion-content{
+    height: 100% !important;
+    --background:#000000;
+    --padding-end:20px;
+    --padding-start:20px;
+}
+ion-img{
+    height: 80%;
+    width: 100%;
+}
+.btn-login{
+    padding: 20px;
+    background-color:#1db954;
+    border-radius:90px;
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+}
