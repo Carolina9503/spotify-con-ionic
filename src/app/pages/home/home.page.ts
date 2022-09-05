@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import SpotifyWebApi from 'spotify-web-api-js';
+import { DataService } from 'src/app/services/data.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -7,12 +9,23 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  token = {};
-  constructor(private loginService: LoginService) { }
+  spotify = new SpotifyWebApi();
+  payload = {};
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    const hash = this.loginService.getToken();
-    console.log(hash);
+    if(localStorage.getItem('token')){
+      this.spotify.setAccessToken(localStorage.getItem('token'));
+      this.spotify.getMe().then((user) => console.log('user', user));
+      this.spotify.getPlaylist('2Bz1tfRIQ1dCNoijtbUB3M').then(({ images, name, tracks: { items } }) => {
+        const payload = {
+          image: images[0].url,
+          namePlayList: name,
+          songs: items,
+        };
+        console.log(payload);
+      });
+    }
   }
 
 }
