@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class HomePage implements OnInit {
   spotify = new SpotifyWebApi();
-  payload = {};
+  payload = [];
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -18,12 +18,8 @@ export class HomePage implements OnInit {
       this.spotify.setAccessToken(localStorage.getItem('token'));
       this.spotify.getMe().then((user) => console.log('user', user));
       this.spotify.getPlaylist('2Bz1tfRIQ1dCNoijtbUB3M').then(({ images, name, tracks: { items } }) => {
-        const payload = {
-          image: images[0].url,
-          namePlayList: name,
-          songs: items,
-        };
-        console.log(payload);
+        this.payload = [items];
+        console.log(this.payload);
       });
     }
   }

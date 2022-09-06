@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <app-tabs-top></app-tabs-top>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+<ion-content class="ion-padding">
+  <app-songs *ngFor="let item of payload let index = index" [item]="item" [index]="index"></app-songs>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <app-tabs></app-tabs>
+  </ion-toolbar>
+  
+</ion-footer>

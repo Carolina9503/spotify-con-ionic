@@ -1,0 +1,17 @@
+[
+    {
+      "icon": "home-outline",
+      "name": "Inicio",
+      "tab": "inicio"
+    },
+    {
+      "icon": "search-outline",
+      "name": "Buscar",
+      "tab": "buscar"
+    },
+    {
+      "icon": "library-outline",
+      "name": "Tu biblioteca",
+      "tab": "biblioteca"
+    }
+]
