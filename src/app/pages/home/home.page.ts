@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import SpotifyWebApi from 'spotify-web-api-js';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
-import { LoginService } from 'src/app/services/login.service';
+import { loadPlayList } from 'src/app/state/actions/playList.actions';
+import { selectLoading } from 'src/app/state/selectors/playList.selectors';
 
 @Component({
   selector: 'app-home',
@@ -9,19 +11,13 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  spotify = new SpotifyWebApi();
-  payload = [];
-  constructor(private dataService: DataService) { }
+  loading$: Observable<boolean> = new Observable();
+
+  constructor(private store: Store) { }
 
   ngOnInit() {
-    if(localStorage.getItem('token')){
-      this.spotify.setAccessToken(localStorage.getItem('token'));
-      this.spotify.getMe().then((user) => console.log('user', user));
-      this.spotify.getPlaylist('2Bz1tfRIQ1dCNoijtbUB3M').then(({ images, name, tracks: { items } }) => {
-        this.payload = [items];
-        console.log(this.payload);
-      });
-    }
+    this.loading$ = this.store.select(selectLoading);
+    this.store.dispatch(loadPlayList());
   }
 
 }
