@@ -14,4 +14,5 @@ export class DataService {
   getOptsTabsBottom() {
     return this.http.get<Tab[]>('/assets/data/tabs-bottom-opts.json');
   }
+
 }

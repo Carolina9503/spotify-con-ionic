@@ -7,6 +7,6 @@ export const loadPlayList = createAction(
 
 export const loadedPlayList = createAction(
     '[play list] Loaded success',
-    props<{ playList: PlayList[] }>()
+    props<{ playList: PlayList}>()
   );
 

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import SpotifyWebApi from 'spotify-web-api-js';
 import { loadedPlayList } from 'src/app/state/actions/playList.actions';
+import { getToken } from 'src/assets/storage';
 
 
 @Component({
@@ -15,17 +16,21 @@ export class SongsComponent implements OnInit {
   constructor(private store: Store) { }
 
   ngOnInit() {
-    if(localStorage.getItem('token')){
-      this.spotify.setAccessToken(localStorage.getItem('token'));
+    if(getToken()){
+      console.log('ENTRO aQUI');
+      this.spotify.setAccessToken(getToken());
       this.spotify.getMe().then((user) => console.log('user', user));
       this.spotify.getPlaylist('2FqbB4n32EAp8xWiEPSslS').then(({ images, name, tracks: { items } })  => {
         this.payload = items;
-        // const payload = {
-        //   songs: items,
-        // };
-        // this.store.dispatch(loadedPlayList( {playList: payload}));
+        console.log('Aqui',this.payload);
+
+        const payload = {
+          image: images[0].url,
+          namePlayList: name,
+          songs: items,
+        };
+        this.store.dispatch(loadedPlayList( {playList: payload}));
       });
-      console.log('Aqui',this.payload);
     }
   }
 

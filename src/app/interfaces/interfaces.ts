@@ -6,7 +6,7 @@ export interface Tab {
 export interface PlayList {
     image: string;
     namePlayList: string;
-    songs: [];
+    songs: any;
 }
 
 export interface PlayListState {

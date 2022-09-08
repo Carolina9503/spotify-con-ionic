@@ -8,5 +8,5 @@ export const initialState: PlayListState = { loading: false, playList: []};
 export const playListReducer = createReducer(
   initialState,
   on(loadPlayList, (state) => ({ ...state, loading: true })),
-  // on(loadedPlayList, (state, {playlist}) => ({ ...state, loading: false, playlist }))
+   on(loadedPlayList, (state, {playList}) => ({ ...state, loading: false, playlist:playList }))
 );

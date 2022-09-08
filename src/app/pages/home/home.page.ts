@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { DataService } from 'src/app/services/data.service';
 import { loadPlayList } from 'src/app/state/actions/playList.actions';
 import { selectLoading } from 'src/app/state/selectors/playList.selectors';
 

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { setToken } from 'src/assets/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class LoginService {
     const url =  window.location.hash;
     const [, query] = url.split('#') || [];
     const parts = new URLSearchParams(query);
-    localStorage.setItem('token', parts.get('access_token') || '');
+    setToken(parts.get('access_token') || '');
   }
 
   getUrl() {
