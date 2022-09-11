@@ -1,15 +1,8 @@
-<ion-header>
-  <ion-toolbar>
-    <app-tabs-top></app-tabs-top>
-  </ion-toolbar>
-</ion-header>
+
+<b class="ion-padding" *ngIf="(loading$ | async)">Cargando ... {{loading$ | async}}</b>
+
 <ion-content class="ion-padding">
-  <app-songs></app-songs>
+  <!-- <pre>{{(songs$ | async) | json}}</pre> -->
+  <app-songs *ngFor="let song of (songs$ | async).songs" [song]="song"></app-songs>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <app-tabs></app-tabs>
-  </ion-toolbar>
-  
-</ion-footer>

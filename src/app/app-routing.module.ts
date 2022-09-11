@@ -15,14 +15,18 @@ const routes: Routes = [
     canActivate:[LoginGuard]
   },
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
-    canActivate:[HomeGuard]
-  },
-  {
     path: 'notifications',
     loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule),
+    canActivate:[HomeGuard]
+  },
+  {
+    path: 'tabs-top',
+    loadChildren: () => import('./pages/tabs-top/tabs-top.module').then( m => m.TabsTopPageModule)
+  }
 ];
 
 @NgModule({

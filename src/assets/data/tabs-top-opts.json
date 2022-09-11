@@ -1,0 +1,17 @@
+[
+    {
+      "icon": "notifications-outline",
+      "name":"",
+      "tab": "notificaciones"
+    },
+    {
+      "icon": "timer-outline",
+      "name":"",
+      "tab": "lista"
+    },
+    {
+      "icon": "settings-outline",
+      "name":"",
+      "tab": "configuraciones"
+    }
+]

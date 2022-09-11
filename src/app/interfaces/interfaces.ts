@@ -11,5 +11,10 @@ export interface PlayList {
 
 export interface PlayListState {
     loading: boolean;
-    playList: ReadonlyArray<PlayList>;
+    playList: PlayList;
+}
+export interface Componente {
+    icon: string;
+    name: string;
+    redirectTo: string;
 }

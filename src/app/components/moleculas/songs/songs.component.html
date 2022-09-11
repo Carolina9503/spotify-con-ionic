@@ -1,21 +1,19 @@
-<ion-content class="ion-padding" fullscreen>
-
+<ion-content>
   <ion-grid fixed>
     <ion-row>
       <ion-col
-        size="12" size-lg="3" size-md="4" size-sm="6"
-        *ngFor="let item of payload let index = index">
+        size="12" size-lg="3" size-md="4" size-sm="6">
 
         <ion-card>
-          <ion-img [src]="item.track.album.images[0].url"></ion-img>
+          <ion-img [src]="song.track.album.images[0].url"></ion-img>
         </ion-card>
 
         <ion-card-header>
-          <ion-card-subtitle>{{item.track.name}}</ion-card-subtitle>
+          <ion-card-subtitle>{{song.track.name}}</ion-card-subtitle>
         </ion-card-header>
 
         <ion-card-content>
-          {{ item.track.artists[0].name}}
+          {{ song.track.artists[0].name}}
           <ion-icon name="heart-outline"></ion-icon>
         </ion-card-content>
 
@@ -23,6 +21,5 @@
 
     </ion-row>
   </ion-grid>
-
 </ion-content>
 
