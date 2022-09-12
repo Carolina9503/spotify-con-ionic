@@ -15,13 +15,15 @@ export class SongsComponent implements OnInit {
   ngOnInit() {
   }
   fovorites(song){
+    const array = [];
     const payload = {
       id:song.track.id,
       img: song.track.album.images[0].url,
       name: song.track.name,
       artist: song.track.artists[0].name
     };
-    this.store.dispatch(addFavorites({favorites:payload}));
-    console.log('favorites', song);
+    array.push(payload);
+    this.store.dispatch(addFavorites({favorites:array}));
+    console.log('favorites', array);
   }
 }
