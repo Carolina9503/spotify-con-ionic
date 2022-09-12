@@ -1,10 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import SpotifyWebApi from 'spotify-web-api-js';
-import { loadedPlayList } from 'src/app/state/actions/playList.actions';
-import { selectListSongs } from 'src/app/state/selectors/playList.selectors';
-import { getToken } from 'src/assets/storage';
+import { addFavorites} from 'src/app/state/actions/favorites.actions';
 
 
 @Component({
@@ -14,9 +10,18 @@ import { getToken } from 'src/assets/storage';
 })
 export class SongsComponent implements OnInit {
  @Input() song;
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit() {
   }
-
+  fovorites(song){
+    const payload = {
+      id:song.track.id,
+      img: song.track.album.images[0].url,
+      name: song.track.name,
+      artist: song.track.artists[0].name
+    };
+    this.store.dispatch(addFavorites({favorites:payload}));
+    console.log('favorites', song);
+  }
 }

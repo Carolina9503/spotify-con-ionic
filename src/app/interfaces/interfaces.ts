@@ -13,8 +13,17 @@ export interface PlayListState {
     loading: boolean;
     playList: PlayList;
 }
+export interface FavoritesState {
+    favorites: Favorites;
+}
 export interface Componente {
     icon: string;
     name: string;
     redirectTo: string;
+}
+export interface Favorites {
+    id: string;
+    img: string;
+    name: string;
+    artist: string;
 }

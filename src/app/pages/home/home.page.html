@@ -1,8 +1,13 @@
 
 <b class="ion-padding" *ngIf="(loading$ | async)">Cargando ... {{loading$ | async}}</b>
 
-<ion-content class="ion-padding">
+<ion-content >
+  <ion-grid class="container" fixed>
+    <ion-row>
+      <app-songs *ngFor="let song of (songs$ | async).songs" [song]="song"></app-songs>
+    </ion-row>
+  </ion-grid>
   <!-- <pre>{{(songs$ | async) | json}}</pre> -->
-  <app-songs *ngFor="let song of (songs$ | async).songs" [song]="song"></app-songs>
+  
 </ion-content>
 
