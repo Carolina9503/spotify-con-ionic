@@ -20,11 +20,11 @@ const routes: Routes = [
       },
       {
         path: 'buscar',
-        loadChildren: () => import('../notifications/notifications.module').then(m => m.NotificationsPageModule)
+        loadChildren: () => import('../search-song/search-song.module').then(m => m.SearchSongPageModule)
       },
       {
-        path: 'biblioteca',
-        loadChildren: () => import('../notifications/notifications.module').then(m => m.NotificationsPageModule)
+        path: 'favotitos',
+        loadChildren: () => import('../favorites/favorites-routing.module').then(m => m.FavoritesPageRoutingModule)
       },
 
     ]

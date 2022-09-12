@@ -11,9 +11,10 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ROOT_REDUCERS } from './state/app.state';
+import { FiltroPipe } from './pipes/filtro.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FiltroPipe],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

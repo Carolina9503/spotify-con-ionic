@@ -26,6 +26,14 @@ const routes: Routes = [
   {
     path: 'tabs-top',
     loadChildren: () => import('./pages/tabs-top/tabs-top.module').then( m => m.TabsTopPageModule)
+  },
+  {
+    path: 'search-song',
+    loadChildren: () => import('./pages/search-song/search-song.module').then( m => m.SearchSongPageModule)
+  },
+  {
+    path: 'favorites',
+    loadChildren: () => import('./pages/favorites/favorites.module').then( m => m.FavoritesPageModule)
   }
 ];
 
