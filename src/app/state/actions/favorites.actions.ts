@@ -4,7 +4,7 @@ import { Favorites } from 'src/app/interfaces/interfaces';
 
 export const addFavorites = createAction(
     '[favorites] Add success',
-    props<{ favorites: Favorites}>()
+    props<{ song: Favorites}>()
   );
 
   export const deleteFavorites = createAction(

@@ -21,6 +21,6 @@ export class SongsComponent implements OnInit {
       name: song.track.name,
       artist: song.track.artists[0].name
     };
-    this.store.dispatch(addFavorites({favorites:payload}));
+    this.store.dispatch(addFavorites({song:payload}));
   }
 }

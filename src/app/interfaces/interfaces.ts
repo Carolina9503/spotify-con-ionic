@@ -13,9 +13,9 @@ export interface PlayListState {
     loading: boolean;
     playList: PlayList;
 }
-export interface FavoritesState {
-    favorites: Favorites;
-}
+// export interface FavoritesState {
+//     favorites: Favorites[];
+// }
 export interface Componente {
     icon: string;
     name: string;
