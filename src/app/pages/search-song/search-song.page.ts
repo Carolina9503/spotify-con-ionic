@@ -9,11 +9,15 @@ import { selectListSongs } from 'src/app/state/selectors/playList.selectors';
 })
 export class SearchSongPage implements OnInit {
   textoBuscar = '';
+  // searchSong = [];
   songs$ = this.store.select(selectListSongs);
 
   constructor(private store: Store) { }
 
   ngOnInit() {
+    // this.songs$.subscribe(songs => {
+    //   console.log(songs);
+    // })
   }
 
   onSearchChange(event){

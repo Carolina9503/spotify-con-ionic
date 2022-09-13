@@ -9,10 +9,11 @@ export const initialState: Favorites[] = [];
 export const favoritesReducer = createReducer(
   initialState,
    on(addFavorites, (state, {song}) => [...state, new Favotire({...song})] ),
-  //  on(deleteFavorites, (state, {favorites}) => {
-  //    let tracks = {...state};
-  //   tracks = tracks.filter(song => song.id !== favorites.id);
-  //   return {... state, tracks};
-  //  } ),
+   on(deleteFavorites, (state, {favorites}) => {
+    //  let tracks = state;
+    state = state.filter(song => song.id !== favorites.id);
+    console.log(state.filter(song => song.id !== favorites.id));
+    return state;
+   } ),
 
 );
