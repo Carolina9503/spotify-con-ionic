@@ -10,7 +10,7 @@
 
         <ion-card-content>
           {{ song.track.artists[0].name}}
-          <ion-icon (click)="fovorites(song)" name="heart-outline"></ion-icon>
+          <ion-icon [ngStyle]="isFavorite && {'color':'yellow'}" (click)="fovorites(song)" name="heart-outline"></ion-icon>
         </ion-card-content>
 
       </ion-col>

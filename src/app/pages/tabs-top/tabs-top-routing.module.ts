@@ -24,7 +24,7 @@ const routes: Routes = [
       },
       {
         path: 'configuraciones',
-        loadChildren: () => import('../notifications/notifications.module').then((m) =>m.NotificationsPageModule)
+        loadChildren: () => import('../perfil/perfil.module').then((m) =>m.PerfilPageModule)
       },
 
     ]
