@@ -1,24 +1,25 @@
-
-<ion-content class="ion-padding" fullscreen>
-    <pre>{{(favoriteSongs$ | async) | json}}</pre>
-  <!-- <ion-grid fixed>
+<ion-content class="ion-padding">
+  <!-- <pre>{{(favoriteSongs$ | async) | json}}</pre> -->
+  <ion-grid fixed>
     <ion-row>
-      <ion-col>
+      <ion-col 
+       size="12" size-lg="3" size-md="4" size-sm="6"
+       *ngFor="let song of favoriteSongs$ | async">
         <ion-card>
-          <ion-img [src]="favoriteSongs$.img"></ion-img>
+          <ion-img [src]="song.img"></ion-img>
         </ion-card>
 
         <ion-card-header>
-          <ion-card-subtitle>{{favoriteSongs$.name}}</ion-card-subtitle>
+          <ion-card-subtitle>{{song.name}}</ion-card-subtitle>
         </ion-card-header>
 
         <ion-card-content>
-          {{favoriteSongs$.artist}}
+          {{song.artist}}
         </ion-card-content>
 
       </ion-col>
 
     </ion-row>
-  </ion-grid> -->
+  </ion-grid>
 
 </ion-content>

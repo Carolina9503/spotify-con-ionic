@@ -14,7 +14,7 @@ export interface PlayListState {
     playList: PlayList;
 }
 export interface FavoritesState {
-    favorites: Favorites[];
+    favorites: Favorites;
 }
 export interface Componente {
     icon: string;
