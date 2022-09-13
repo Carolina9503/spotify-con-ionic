@@ -17,7 +17,7 @@
 <ion-content>
   <ion-list>
      <!-- <pre>{{(songs$ | async).songs| json}}</pre> -->
-    <ion-item *ngFor="let song of ((songs$ | async).songs) | filtro:textoBuscar:'song.track.name'">
+    <ion-item *ngFor="let song of searchSong | filtro:textoBuscar:'song.track.name'">
       <ion-label>{{song.track.name}}</ion-label>
     </ion-item>
     

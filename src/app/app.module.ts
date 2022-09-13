@@ -14,7 +14,7 @@ import { ROOT_REDUCERS } from './state/app.state';
 import { FiltroPipe } from './pipes/filtro.pipe';
 
 @NgModule({
-  declarations: [AppComponent, FiltroPipe],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

@@ -9,7 +9,7 @@ import { selectListSongs } from 'src/app/state/selectors/playList.selectors';
 })
 export class SearchSongPage implements OnInit {
   textoBuscar = '';
-  // searchSong = [];
+  searchSong = [];
   songs$ = this.store.select(selectListSongs);
 
   constructor(private store: Store) { }
