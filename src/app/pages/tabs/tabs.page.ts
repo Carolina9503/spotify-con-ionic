@@ -19,14 +19,21 @@ export class TabsPage implements OnInit {
 
   ngOnInit() {
     this.loading$ = this.store.select(selectLoading);
+    // if (this.loading$) {
+      
+    // }
     
   }
   mostrarLoading(){
-    this.presentLoading('Cargando lista de canciones');
+    if (this.loading$) {
+      this.presentLoading('Cargando lista de canciones');
 
-    setTimeout(() =>{
-      this.loading.dismiss();
-    }, 500);
+      setTimeout(() =>{
+        this.loading.dismiss();
+      }, 1000);
+      
+    }
+    
    
   }
   async presentLoading(message: string) {
