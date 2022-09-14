@@ -15,7 +15,7 @@ export class LoginGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (getToken()) {
-        this.navCtrl.navigateRoot('home/inicio');
+        this.navCtrl.navigateRoot('callback');
         return false;
       }else {
         return true;

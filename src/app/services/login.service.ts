@@ -18,7 +18,7 @@ export class LoginService {
   getUrl() {
     const endpoint = 'https://accounts.spotify.com/authorize';
     const clientID = '6ce78825323c48188d029e27ff16c54d';
-    const redirectUri = 'http://localhost:8100/';
+    const redirectUri = 'http://localhost:8100/callback';
     const scopes = [
       'user-read-currently-playing',
       'user-read-recently-played',

@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'callback',
+    loadChildren: () => import('./pages/callback/callback.module').then( m => m.CallbackPageModule)
   }
 ];
 

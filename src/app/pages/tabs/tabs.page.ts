@@ -33,8 +33,6 @@ export class TabsPage implements OnInit {
       }, 1000);
       
     }
-    
-   
   }
   async presentLoading(message: string) {
     this.loading = await this.loadingCtrl.create({
