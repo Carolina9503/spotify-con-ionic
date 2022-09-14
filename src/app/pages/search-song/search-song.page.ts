@@ -18,7 +18,7 @@ export class SearchSongPage implements OnInit {
   }
 
   onSearchChange(event){
-     console.log(event);
+    //  console.log(event);
     this.textoBuscar = event.detail.value;
   }
 
