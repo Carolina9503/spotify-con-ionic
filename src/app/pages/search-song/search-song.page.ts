@@ -15,13 +15,10 @@ export class SearchSongPage implements OnInit {
   constructor(private store: Store) { }
 
   ngOnInit() {
-    // this.songs$.subscribe(songs => {
-    //   console.log(songs);
-    // })
   }
 
   onSearchChange(event){
-    // console.log(event);
+     console.log(event);
     this.textoBuscar = event.detail.value;
   }
 
