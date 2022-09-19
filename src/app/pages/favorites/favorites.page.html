@@ -1,13 +1,14 @@
 <ion-content class="ion-padding">
+  <app-header titulo="Favorites"></app-header>
   <!-- <pre>{{(favoriteSongs$ | async) | json}}</pre> -->
-  <p *ngIf="(favoriteSongs$ | async).length < 1">
+  <p *ngIf="favoriteSongs?.length < 1">
     <ion-icon name="headset-outline"></ion-icon>
     No has agregado ninguna canción a favoritos</p>
   <ion-grid fixed>
     <ion-row>
       <ion-col 
        size="12" size-lg="3" size-md="4" size-sm="6"
-       *ngFor="let song of favoriteSongs$ | async">
+       *ngFor="let song of favoriteSongs">
         <ion-card>
           <ion-img [src]="song.img"></ion-img>
         </ion-card>

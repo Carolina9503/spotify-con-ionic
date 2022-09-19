@@ -16,7 +16,7 @@ export class CallbackPage implements OnInit {
   ngOnInit() {  
     this.showLoading();  
     this.loginService.getToken();
-    this.router.navigate(['/home/inicio']);
+    this.router.navigate(['/home']);
   }
   async showLoading() {
     const loading = await this.loadingCtrl.create({
