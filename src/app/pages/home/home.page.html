@@ -7,7 +7,7 @@
   <app-header titulo="My Music"></app-header>
   <ion-grid class="container" fixed>
     <ion-row>
-      <app-songs *ngFor="let song of (songs$ | async).songs" [song]="song"></app-songs>
+      <app-songs *ngFor="let song of songs" [song]="song"></app-songs>
     </ion-row>
   </ion-grid>
   

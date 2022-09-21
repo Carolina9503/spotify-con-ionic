@@ -21,10 +21,12 @@ export class SongsComponent implements OnInit {
       id:song.track.id,
       img: song.track.album.images[0].url,
       name: song.track.name,
-      artist: song.track.artists[0].name
+      artist: song.track.artists[0].name,
+      isFavorite: true
     };
     this.store.dispatch(addFavorites({song:payload}));
     this.presentToast()
+    console.log(payload);
   }
   async presentToast() {
     const toast = await this.toastController.create({

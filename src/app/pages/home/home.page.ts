@@ -14,12 +14,27 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class HomePage implements OnInit {
   loading$: Observable<boolean> = new Observable();
-  songs$ = this.store.select(selectListSongs);
+  songs
   spotify = new SpotifyWebApi();
 
   constructor(private store: Store, private dataService: DataService) { }
 
   ngOnInit() {
+    this.store.subscribe((res:any) => {
+      const songs = res.playList.playList.songs;
+      const favorites = res.favorites
+      console.log(favorites)
+      this.songs = songs.map(item => {
+        const tem = favorites.filter(song => song.id === item.track.id);
+        const tem2 = {...item}
+        if (tem.length > 0) {
+          tem2.isFavorite = true
+        }
+        return tem2;
+      })
+      console.log(this.songs)
+    })
+    
     this.loading$ = this.store.select(selectLoading);
     this.store.dispatch(loadPlayList());
     if(getToken()){
@@ -29,7 +44,10 @@ export class HomePage implements OnInit {
         const payload = {
           image: images[0].url,
           namePlayList: name,
-          songs: items,
+          songs: items.map((item) =>{
+            const song = {...item, isFavorite: false}
+            return song
+          } ),
         };
         this.store.dispatch(loadedPlayList( {playList: payload}));
         console.log('Home-payload',payload);

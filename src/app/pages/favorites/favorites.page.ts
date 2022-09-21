@@ -28,7 +28,16 @@ export class FavoritesPage implements OnInit, OnDestroy {
 
   deleteFovorites(song){
     console.log(song);
-    this.store.dispatch(deleteFavorites({favorites: song}));
+    const payload = {
+      id:song.id,
+      img: song.img,
+      name: song.name,
+      artist: song.artist,
+      isFavorite: false
+    }
+    
+    console.log(song);
+    this.store.dispatch(deleteFavorites({favorites: payload}));
     this.presentToast()
   }
   async presentToast() {
