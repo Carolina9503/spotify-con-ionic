@@ -11,43 +11,18 @@ import { selectFavoritesFeature } from '../../state/selectors/favorites.selector
   styleUrls: ['./favorites.page.scss'],
 })
 export class FavoritesPage implements OnInit, OnDestroy {
-  favoriteSongs
+  songs
   subscription: Subscription 
   
   constructor(private store: Store, private toastController: ToastController) { }
 
   ngOnInit() {
     this.subscription = this.store.select(selectFavoritesFeature).subscribe(res => {
-      this.favoriteSongs = res
+      this.songs = res
     }
     )
   }
   ngOnDestroy(){
     this.subscription.unsubscribe();
-  }
-
-  deleteFovorites(song){
-    console.log(song);
-    const payload = {
-      id:song.id,
-      img: song.img,
-      name: song.name,
-      artist: song.artist,
-      isFavorite: false
-    }
-    
-    console.log(song);
-    this.store.dispatch(deleteFavorites({favorites: payload}));
-    this.presentToast()
-  }
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: 'Se eliminó de tus me gusta.',
-      duration: 1000,
-      icon:'trash',
-      cssClass: 'custom-toast',
-      color: 'primary'
-    });
-    toast.present();
   }
 }

@@ -26,7 +26,14 @@ export class HomePage implements OnInit {
       console.log(favorites)
       this.songs = songs.map(item => {
         const tem = favorites.filter(song => song.id === item.track.id);
-        const tem2 = {...item}
+        const tem2 = {
+          id:item.track.id,
+          img: item.track.album.images[0].url,
+          name: item.track.name,
+          artist: item.track.artists[0].name,
+          isFavorite:item.isFavorite
+        }
+        console.log(tem2)
         if (tem.length > 0) {
           tem2.isFavorite = true
         }

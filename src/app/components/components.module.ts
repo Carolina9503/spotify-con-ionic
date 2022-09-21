@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { SongsComponent } from './moleculas/songs/songs.component';
 import { TabBottomComponent } from './organismos/tab-bottom/tab-bottom.component';
 import { HeaderComponent } from './atomos/header/header.component';
+import { GridSongsComponent } from './template/grid-songs/grid-songs.component';
 
 
 
@@ -11,13 +12,15 @@ import { HeaderComponent } from './atomos/header/header.component';
   declarations: [
     SongsComponent,
     TabBottomComponent,
-    HeaderComponent  
+    HeaderComponent,
+    GridSongsComponent 
     
   ],
   exports: [
     SongsComponent,
     TabBottomComponent,
-    HeaderComponent
+    HeaderComponent,
+    GridSongsComponent
   ],
   imports: [
     CommonModule,

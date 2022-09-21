@@ -1,17 +1,5 @@
-
-<!-- <b class="ion-padding" *ngIf="(loading$ | async)">
-  <ion-img class="loading" src="/assets/img/charging.png"></ion-img>
-</b> -->
-
 <ion-content >
   <app-header titulo="My Music"></app-header>
-  <ion-grid class="container" fixed>
-    <ion-row>
-      <app-songs *ngFor="let song of songs" [song]="song"></app-songs>
-    </ion-row>
-  </ion-grid>
-  
-  <!-- <pre>{{(songs$ | async) | json}}</pre> -->
-  
+  <app-grid-songs [songs]="songs" [isHome]="true" ></app-grid-songs>  
 </ion-content>
 

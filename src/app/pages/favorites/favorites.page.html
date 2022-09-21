@@ -1,30 +1,8 @@
 <ion-content class="ion-padding">
   <app-header titulo="Favorites"></app-header>
-  <!-- <pre>{{(favoriteSongs$ | async) | json}}</pre> -->
-  <p *ngIf="favoriteSongs?.length < 1">
+  <p *ngIf="songs?.length < 1">
     <ion-icon name="headset-outline"></ion-icon>
-    No has agregado ninguna canción a favoritos</p>
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col 
-       size="12" size-lg="3" size-md="4" size-sm="6"
-       *ngFor="let song of favoriteSongs">
-        <ion-card>
-          <ion-img [src]="song.img"></ion-img>
-        </ion-card>
-
-        <ion-card-header>
-          <ion-card-subtitle>{{song.name}}</ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content>
-          {{song.artist}}
-          <ion-icon (click)="deleteFovorites(song)" name="trash-outline"></ion-icon>
-        </ion-card-content>
-
-      </ion-col>
-
-    </ion-row>
-  </ion-grid> 
-
+    No has agregado ninguna canción a favoritos
+  </p>
+    <app-grid-songs [songs]="songs" [isHome]="false"></app-grid-songs>
 </ion-content>
