@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { loadedPlayList, loadPlayList } from 'src/app/state/actions/playList.actions';
-import { selectListSongs, selectLoading } from 'src/app/state/selectors/playList.selectors';
+import { loadedPlayList, loadPlayList } from '../../state/actions/playList.actions';
+import { selectListSongs, selectLoading } from '../../state/selectors/playList.selectors';
 import SpotifyWebApi from 'spotify-web-api-js';
-import { getToken } from 'src/assets/storage';
-import { DataService } from 'src/app/services/data.service';
+import { getToken } from '../../../assets/storage';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-home',

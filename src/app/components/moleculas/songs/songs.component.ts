@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
-import { addFavorites, deleteFavorites} from 'src/app/state/actions/favorites.actions';
+import { addFavorites, deleteFavorites} from '../../../state/actions/favorites.actions';
 
 
 @Component({

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
-import { getToken } from 'src/assets/storage';
+import { getToken } from '../../assets/storage';
 
 @Injectable({
   providedIn: 'root'

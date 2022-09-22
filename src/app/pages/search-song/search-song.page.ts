@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectListSongs } from 'src/app/state/selectors/playList.selectors';
+import { selectListSongs } from '../../state/selectors/playList.selectors';
 
 @Component({
   selector: 'app-search-song',

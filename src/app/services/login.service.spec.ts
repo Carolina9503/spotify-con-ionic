@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { LoginService } from './login.service';
+import { setToken } from '../../assets/storage';
 
 describe('LoginService', () => {
   let service: LoginService;

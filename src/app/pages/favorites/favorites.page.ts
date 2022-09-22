@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { deleteFavorites } from 'src/app/state/actions/favorites.actions';
 import { selectFavoritesFeature } from '../../state/selectors/favorites.selectors';
 
 @Component({

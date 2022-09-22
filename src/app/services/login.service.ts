@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { setToken } from 'src/assets/storage';
+import { setToken } from '../../assets/storage';
 
 @Injectable({
   providedIn: 'root'

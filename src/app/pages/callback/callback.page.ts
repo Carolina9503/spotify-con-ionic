@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
-import { getToken } from 'src/assets/storage';
 import { LoadingController } from '@ionic/angular';
 
 @Component({

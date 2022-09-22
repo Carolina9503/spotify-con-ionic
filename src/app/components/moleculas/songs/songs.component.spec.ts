@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { addFavorites, deleteFavorites} from '../../../state/actions/favorites.actions';
 
 import { SongsComponent } from './songs.component';
 
