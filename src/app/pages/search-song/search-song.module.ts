@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SearchSongPageRoutingModule } from './search-song-routing.module';
 
 import { SearchSongPage } from './search-song.page';
-import { PipesModule } from 'src/app/pipes/pipes.module';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   imports: [

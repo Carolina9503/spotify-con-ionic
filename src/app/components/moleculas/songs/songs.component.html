@@ -1,16 +1,16 @@
  
       <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
         <ion-card>
-          <ion-img [src]="song.img"></ion-img>
+          <ion-img [src]="song?.img"></ion-img>
         </ion-card>
 
         <ion-card-header>
-          <ion-card-subtitle>{{song.name}}</ion-card-subtitle>
+          <ion-card-subtitle>{{song?.name}}</ion-card-subtitle>
         </ion-card-header>
 
         <ion-card-content>
-          {{ song.artist}}
-          <ion-icon *ngIf="isHome" [ngClass]="{'fovorito':song.isFavorite}" (click)="fovorites(song)" name="heart-sharp" size="small"></ion-icon>
+          {{ song?.artist}}
+          <ion-icon *ngIf="isHome" [ngClass]="{'fovorito':song?.isFavorite}" (click)="fovorites(song)" name="heart-sharp" size="small"></ion-icon>
           <ion-icon *ngIf="!isHome" (click)="deleteFovorites(song)" name="trash-outline"></ion-icon>
         </ion-card-content>
 

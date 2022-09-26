@@ -13,6 +13,5 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.url = this.loginService.getUrl();
     const hash = this.loginService.getToken();
-    console.log(':_____',hash);
   }
 }

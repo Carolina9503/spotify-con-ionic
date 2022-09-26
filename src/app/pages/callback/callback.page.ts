@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { LoadingController } from '@ionic/angular';
+import { getToken } from '../../../assets/storage';
 
 @Component({
   selector: 'app-callback',
@@ -15,7 +16,9 @@ export class CallbackPage implements OnInit {
   ngOnInit() {  
     this.showLoading();  
     this.loginService.getToken();
-    this.router.navigate(['/home']);
+    if (getToken()) {
+      this.router.navigate(['/home']);
+    }
   }
   async showLoading() {
     const loading = await this.loadingCtrl.create({

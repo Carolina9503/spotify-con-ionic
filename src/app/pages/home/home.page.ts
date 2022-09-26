@@ -5,7 +5,7 @@ import { loadedPlayList, loadPlayList } from '../../state/actions/playList.actio
 import { selectListSongs, selectLoading } from '../../state/selectors/playList.selectors';
 import SpotifyWebApi from 'spotify-web-api-js';
 import { getToken } from '../../../assets/storage';
-import { DataService } from '../../services/data.service';
+
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
   songs
   spotify = new SpotifyWebApi();
 
-  constructor(private store: Store, private dataService: DataService) { }
+  constructor(private store: Store) { }
 
   ngOnInit() {
     this.store.subscribe((res:any) => {
